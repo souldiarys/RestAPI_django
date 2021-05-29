@@ -5,6 +5,24 @@
         <title></title>
     </head>
     <body>
-        Hello, World!
+        <table>
+            <thead>
+                <tr>
+                    <th>제목</th>
+                    <th>작성자</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for post in post_list %}
+                    <tr>
+                        <td>{{ post.title }}</td>
+                        <td>{{ post.author }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% for page_number in post_list.paginator.page_range %}
+            <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
+        {% endfor %}
     </body>
 </html>
