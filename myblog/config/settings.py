@@ -46,6 +46,9 @@ INSTALLED_APPS = [
 
     # Board
     'board',
+
+    # User Manager
+    'user_manager',
 ]
 
 MIDDLEWARE = [
