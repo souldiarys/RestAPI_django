@@ -1,13 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
 <html>
     <head lang="en">
         <meta charset="UTF-8">
         <title>회원가입</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
     </head>
     <body>
         <form action="" method="POST">
             {% csrf_token %}
-            {{ join_form }}
-            <input type="submit" value="회원가입"/>
+            <div class="form_wrapper">
+                <div class="input_form">
+                    <label for="{{ join_form.id.id_for_label }}">{{ join_form.id.label }}</label>
+                    {{ join_form.id }}
+                </div>
+                <div class="input_form">
+                    <label for="{{ join_form.password.password_for_label }}">{{ join_form.password.label }}</label>
+                    {{ join_form.password }}
+                </div>
+                <div class="input_form">
+                    <label for="{{ join_form.password_check.password_check_for_label }}">{{ join_form.password_check.label }}</label>
+                    {{ join_form.password_check }}
+                </div>
+            </div>
+            <input class="btn_submit" type="submit" value="회원가입"/>
         </form>
     </body>
 </html>
